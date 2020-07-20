@@ -76,15 +76,6 @@ public class LoginActivity extends AppCompatActivity {
                 //Complete and destroy login activity once successful
                 //finish();
 
-                try
-                {
-                    setContentView(R.layout.activity_main);
-                    Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！", Toast.LENGTH_LONG).show();
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
-                }
             }
         });
 
@@ -125,13 +116,22 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                try
+                {
+                    setContentView(R.layout.activity_main);
+                    Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！", Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
         // String welcome = getString(R.string.welcome) + model.getDisplayName();
-        String login = new String("LOGIN SUCCESSFUL");
+        String login = new String("Su");
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), login, Toast.LENGTH_LONG).show();
     }

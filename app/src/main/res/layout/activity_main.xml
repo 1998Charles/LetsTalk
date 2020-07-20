@@ -8,8 +8,8 @@
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
-        android:layout_width="219dp"
-        android:layout_height="170dp"
+        android:layout_width="227dp"
+        android:layout_height="66dp"
         android:text="AutoCompleteTextView"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="156dp" />
