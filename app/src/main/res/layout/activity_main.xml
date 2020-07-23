@@ -8,16 +8,16 @@
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
-        android:layout_width="227dp"
-        android:layout_height="66dp"
+        android:layout_width="82dp"
+        android:layout_height="62dp"
         android:text="AutoCompleteTextView"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="156dp" />
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="163dp" />
 
     <MultiAutoCompleteTextView
         android:id="@+id/multiAutoCompleteTextView"
-        android:layout_width="224dp"
-        android:layout_height="137dp"
+        android:layout_width="107dp"
+        android:layout_height="77dp"
         android:text="MultiAutoCompleteTextView"
         tools:layout_editor_absoluteX="94dp"
         tools:layout_editor_absoluteY="340dp" />

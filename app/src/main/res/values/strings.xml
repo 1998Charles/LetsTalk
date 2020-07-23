@@ -12,5 +12,5 @@
     <string name="login_id">"Login ID"</string>
     <string name="host_name">"Host Name"</string>
     <string name="port_number">"Port Number"</string>
-    <string name="sign_in">"SIGN IN"</string>
+    <string name="sign_in">"Sign in"</string>
 </resources>
