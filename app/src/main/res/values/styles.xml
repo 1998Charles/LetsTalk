@@ -4,12 +4,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#2196F3</item>
+        <item name="colorAccent">#A5CDFE</item>
     </style>
 
     <style name="EditText" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@android:color/white</item>
-        <item name="colorControlActivated">#2196F3</item>
+        <item name="colorControlActivated">#A5CDFE</item>
     </style>
 
 

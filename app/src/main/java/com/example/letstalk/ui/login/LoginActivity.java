@@ -26,6 +26,11 @@ import com.example.letstalk.R;
 import com.example.letstalk.ui.login.LoginViewModel;
 import com.example.letstalk.ui.login.LoginViewModelFactory;
 
+// From the simplechat1/ClientConsole.java
+import java.io.*;
+import com.example.letstalk.simplechat1.client.*;
+import com.example.letstalk.simplechat1.common.*;
+
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
@@ -37,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
+        final EditText loginIdEditText = findViewById(R.id.loginid);
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);

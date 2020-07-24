@@ -4,21 +4,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/snow_mountain">
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="82dp"
-        android:layout_height="62dp"
-        android:text="AutoCompleteTextView"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="163dp" />
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="24dp"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"/>
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/multiAutoCompleteTextView"
-        android:layout_width="107dp"
-        android:layout_height="77dp"
-        android:text="MultiAutoCompleteTextView"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="340dp" />
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="#B0FFFFFF"
+        android:ems="10"
+        android:gravity="top|left"
+        android:inputType="textPersonName"
+        android:isScrollContainer="true"
+        android:radius="55dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarSize="6dp"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:selectAllOnFocus="false"
+        android:shape="rectangle"
+        android:text="TEXT"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
