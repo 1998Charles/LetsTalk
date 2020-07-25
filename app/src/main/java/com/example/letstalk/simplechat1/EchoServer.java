@@ -1,12 +1,15 @@
+
 // This file contains material supporting section 3.7 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
-// license found at www.lloseng.com 
+// license found at www.lloseng.com
+
+package com.example.letstalk.simplechat1;
 
 import java.io.*;
-import ocsf.server.*;
-import common.*;
+import com.example.letstalk.simplechat1.ocsf.server.*;
+import com.example.letstalk.simplechat1.common.*;
 /**
- * This class overrides some of the methods in the abstract 
+ * This class overrides some of the methods in the abstract
  * superclass in order to give more functionality to the server.
  *
  * @author Dr Timothy C. Lethbridge
@@ -15,34 +18,34 @@ import common.*;
  * @author Paul Holden
  * @version July 2000
  */
-public class EchoServer extends AbstractServer 
+public class EchoServer extends AbstractServer
 {
-  ChatIF serverUI; 
+  ChatIF serverUI;
   boolean closed;
   //Class variables *************************************************
-  
+
   /**
    * The default port to listen on.
    */
   final public static int DEFAULT_PORT = 5555;
-  
+
   //Constructors ****************************************************
-  
+
   /**
    * Constructs an instance of the echo server.
    *
    * @param port The port number to connect on.
    */
-  public EchoServer(int port, ChatIF serverUI) 
+  public EchoServer(int port, ChatIF serverUI)
   {
     super(port);
     this.serverUI = serverUI;
     this.closed = false;
   }
 
-  
+
   //Instance methods ************************************************
-  
+
   /**
    * This method handles any messages received from the client.
    *
@@ -52,9 +55,9 @@ public class EchoServer extends AbstractServer
   public void handleMessageFromClient(Object msg, ConnectionToClient client) {
     String m = (String)msg;
     String dspId = client.toString();
-    if (m.length() != 0  && 
-        m.charAt(0) == '#' && 
-        m.split(" ").length == 1) { //when the message is an id 
+    if (m.length() != 0  &&
+        m.charAt(0) == '#' &&
+        m.split(" ").length == 1) { //when the message is an id
       if (client.getInfo("id") == null) {
         client.setInfo("id", m);
       } else {
@@ -83,7 +86,7 @@ public class EchoServer extends AbstractServer
     serverUI.display(prefix + msg);
     this.sendToAllClients(prefix + msg);
   }
-    
+
   /**
    * This method overrides the one in the superclass.  Called
    * when the server starts listening for connections.
@@ -93,7 +96,7 @@ public class EchoServer extends AbstractServer
     this.closed = false;
     serverUI.display("Server listening for connections on port " + getPort());
   }
-  
+
   /**
    * This method overrides the one in the superclass.  Called
    * when the server stops listening for connections.
@@ -117,17 +120,17 @@ public class EchoServer extends AbstractServer
   public boolean isClosed() {
     return this.closed;
   }
-  
+
   //Class methods ***************************************************
-  
+
   // /**
-  //  * This method is responsible for the creation of 
+  //  * This method is responsible for the creation of
   //  * the server instance (there is no UI in this phase).
   //  *
-  //  * @param args[0] The port number to listen on.  Defaults to 5555 
+  //  * @param args[0] The port number to listen on.  Defaults to 5555
   //  *          if no argument is entered.
   //  */
-  // public static void main(String[] args) 
+  // public static void main(String[] args)
   // {
   //   int port = 0; //Port to listen on
 
@@ -139,14 +142,14 @@ public class EchoServer extends AbstractServer
   //   {
   //     port = DEFAULT_PORT; //Set port to 5555
   //   }
-	
+
   //   EchoServer sv = new EchoServer(port);
-    
-  //   try 
+
+  //   try
   //   {
   //     sv.listen(); //Start listening for connections
-  //   } 
-  //   catch (Exception ex) 
+  //   }
+  //   catch (Exception ex)
   //   {
   //     System.out.println("ERROR - Could not listen for clients!");
   //   }

@@ -28,8 +28,8 @@ import com.example.letstalk.ui.login.LoginViewModelFactory;
 
 // From the simplechat1/ClientConsole.java
 import java.io.*;
-import com.example.letstalk.simplechat1.client.*;
-import com.example.letstalk.simplechat1.common.*;
+import com.example.letstalk.simplechat1.*;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -122,14 +122,30 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+
+
+
                 try
                 {
+                    //ClientConsole chat = new ClientConsole("999", "192.168.137.35", 5555);
+                    //ClientConsole.main(new String[]{loginIdEditText.getText().toString(), usernameEditText.getText().toString(), passwordEditText.getText().toString()});
+                    //ClientConsole.main(new String[]{});
+                    ServerConsole.main(new String[]{});
                     setContentView(R.layout.activity_main);
                     Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！", Toast.LENGTH_LONG).show();
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
+                    StringBuffer out = new StringBuffer();
+
+                    for (int i = 0; i < e.getStackTrace().length; i++)
+                    {
+                        out.append(e.getStackTrace()[i]);
+                    }
+                    out.append("THE END.");
+                    //Toast.makeText(getApplicationContext(), e.fillInStackTrace().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -137,9 +153,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUiWithUser(LoggedInUserView model) {
         // String welcome = getString(R.string.welcome) + model.getDisplayName();
-        String login = new String("Su");
+        String login = new String("Confirmed");
         // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), login, Toast.LENGTH_LONG).show();
+        // Toast.makeText(getApplicationContext(), login, Toast.LENGTH_LONG).show();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

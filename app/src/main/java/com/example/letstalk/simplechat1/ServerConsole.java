@@ -1,6 +1,7 @@
+package com.example.letstalk.simplechat1;
 
 import java.io.*;
-import common.*;
+import com.example.letstalk.simplechat1.common.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 

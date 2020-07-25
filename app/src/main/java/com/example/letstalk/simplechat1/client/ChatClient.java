@@ -2,10 +2,10 @@
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com 
 
-package client;
+package com.example.letstalk.simplechat1.client;
 
-import ocsf.client.*;
-import common.*;
+import com.example.letstalk.simplechat1.ocsf.client.*;
+import com.example.letstalk.simplechat1.common.*;
 import java.io.*;
 
 /**
@@ -46,7 +46,7 @@ public class ChatClient extends AbstractClient
     this.clientUI = clientUI;
     this.id = id;
     openConnection();
-    login();
+    // login();
   }
 
   
@@ -82,6 +82,19 @@ public class ChatClient extends AbstractClient
       clientUI.display
         ("Could not send message to server.  Terminating client.");
       quit();
+    }
+  }
+
+  protected void connectionEstablished() {
+    clientUI.display("Connection established.");  //Indicates the connection has established.
+    try
+    {
+      login();
+    }
+    catch(Exception e)
+    {
+      clientUI.display("Could not set login ID.  Terminating client.");
+        quit();
     }
   }
 
