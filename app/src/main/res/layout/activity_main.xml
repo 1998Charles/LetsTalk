@@ -1,53 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.example.letstalk.ui.login.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/snow_mountain">
+    android:background="@drawable/star"
+    android:scrollbarSize="6dp"
+    tools:context=".ui.login.LoginActivity">
 
-    <ScrollView
-        android:id="@+id/scrollview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="24dp"
-        android:scrollbarStyle="insideOverlay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:soundEffectsEnabled="true"
+        android:visibility="visible"
+        tools:visibility="visible">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="#B0FFFFFF"
-        android:ems="10"
-        android:gravity="top|left"
-        android:inputType="textPersonName"
-        android:isScrollContainer="true"
-        android:radius="55dp"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        android:scrollbarSize="6dp"
-        android:scrollbars="vertical"
-        android:scrollHorizontally="false"
-        android:selectAllOnFocus="false"
-        android:shape="rectangle"
-        android:text="TEXT"
-        android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <com.example.letstalk.ui.login.MyScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp">
+
+            <TextView
+                android:id="@+id/windowText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/shape_window"
+                android:ems="10"
+                android:fadingEdge="vertical"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="bottom"
+                android:isScrollContainer="true"
+                android:lineSpacingMultiplier="0.93"
+                android:maxLines="12"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarSize="6dp"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:typeface="sans" />
+        </com.example.letstalk.ui.login.MyScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:soundEffectsEnabled="true"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/keyboard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/hide_send"
+                android:fontFamily="@font/helvetica_neue"
+                android:gravity="center"
+                android:soundEffectsEnabled="true"
+                android:text="⌨️ HIDE ️"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/hide_send"
+                android:fontFamily="@font/helvetica_neue"
+                android:gravity="center"
+                android:soundEffectsEnabled="true"
+                android:text="✉️ SEND "
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <com.example.letstalk.ui.login.MyScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/shape_window"
+                android:ems="10"
+                android:fadingEdge="vertical"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="bottom"
+                android:isScrollContainer="true"
+                android:lineSpacingMultiplier="0.93"
+                android:maxLines="3"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarSize="6dp"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:typeface="normal" />
+
+        </com.example.letstalk.ui.login.MyScrollView>
+
+        <TextView
+            android:id="@+id/tipsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/shape_window"
+            android:ems="10"
+            android:fadingEdge="vertical"
+            android:fontFamily="@font/courier"
+            android:gravity="bottom"
+            android:isScrollContainer="true"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarSize="6dp"
+            android:scrollbars="vertical"
+            android:scrollHorizontally="false"
+            android:selectAllOnFocus="false"
+            android:singleLine="false"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:typeface="normal"
+            android:lineSpacingMultiplier="0.93"/>
+    </LinearLayout>
+</com.example.letstalk.ui.login.MyScrollView>

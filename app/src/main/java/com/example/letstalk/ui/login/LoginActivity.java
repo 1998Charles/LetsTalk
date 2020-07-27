@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -15,11 +16,14 @@ import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +36,17 @@ import java.io.*;
 import com.example.letstalk.simplechat1.*;
 import com.example.letstalk.ui.login.*;
 
+// Scroll view
+import android.text.method.ScrollingMovementMethod;
+
+import org.w3c.dom.Text;
+
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+
+    ClientConsole chat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,10 +55,11 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText loginIdEditText = findViewById(R.id.loginid);
-        final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
+        final EditText loginIdEditText = findViewById(R.id.loginid); // login id
+        final EditText usernameEditText = findViewById(R.id.username); // host name
+        final EditText passwordEditText = findViewById(R.id.password); // port number
         final Button loginButton = findViewById(R.id.login);
+        final Button keyBoard = findViewById(R.id.keyboard);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -121,6 +133,35 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        keyBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+//********************
+                setContentView(R.layout.activity_main);
+
+                TextView textView=(TextView)findViewById(R.id.windowText);
+                textView.setMovementMethod(ScrollingMovementMethod.getInstance());
+
+
+//                ScrollView scrollView1=(ScrollView)findViewById(R.id.scrollView1);
+//                scrollView1.setMovementMethod(ScrollingMovementMethod.getInstance());
+//
+//                TextView scrollView2=(TextView)findViewById(R.id.scrollView2);
+//                scrollView2.setMovementMethod(ScrollingMovementMethod.getInstance());
+
+
+//********************
+
+                InputMethodManager imm =  (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                if(imm != null) {
+                    imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(),
+                            0);
+                }
+            }
+        });
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,10 +173,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 try
                 {
-                    ClientConsole chat = new ClientConsole(loginIdEditText.getText().toString(), usernameEditText.getText().toString(), Integer.parseInt(passwordEditText.getText().toString()));
-                    chat.accept();
+                //    ClientConsole chat = new ClientConsole(loginIdEditText.getText().toString(), usernameEditText.getText().toString(), Integer.parseInt(passwordEditText.getText().toString()));
+                //    chat.accept();
 
-                    //ClientConsole.main(new String[]{loginIdEditText.getText().toString(), usernameEditText.getText().toString(), passwordEditText.getText().toString()});
+                    ClientConsole.main(new String[]{loginIdEditText.getText().toString(), usernameEditText.getText().toString(), passwordEditText.getText().toString()});
+
                     //ClientConsole.main(new String[]{"OSFC", "192.168.137.35", "5555"});
                     //ServerConsole.main(new String[]{});
                     //HelloWorld.main(new String[]{});
@@ -145,22 +187,29 @@ public class LoginActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), loginIdEditText.getText().toString() + usernameEditText.getText().toString() + passwordEditText.getText().toString(), Toast.LENGTH_LONG).show();
 
                     setContentView(R.layout.activity_main);
-                    //Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！", Toast.LENGTH_LONG).show();
+                    //setContentView(R.layout.test2);
+
+                    TextView textView=(TextView)findViewById(R.id.windowText);
+                    textView.setMovementMethod(ScrollingMovementMethod.getInstance());
+                    Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！", Toast.LENGTH_LONG).show();
+
+
+
                 }
-                catch (Exception e)
+                catch (Throwable e)
                 {
-                    StringBuilder out = new StringBuilder();
+//                    StringBuffer out = new StringBuffer("");
+//
+//                    for (int i = 0; i < e.getStackTrace().length; i++)
+//                    {
+//                        out.append(e.getStackTrace()[i]);
+//                        out.append(" / ");
+//                    }
+//                    out.append("THE END.");
 
-                    for (int i = 0; i < e.getStackTrace().length; i++)
-                    {
-                        out.append(e.getStackTrace()[i]);
-                        out.append(" ");
-                    }
-                    out.append("THE END.");
-
-                    Toast.makeText(getApplicationContext(), e.fillInStackTrace().toString(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
-                    Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
+ //                   Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
                 }
             }
         });
