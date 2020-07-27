@@ -1,2 +1,2 @@
 # LetsTalk
-An Android application which implements a simple chat utilizing OCSF framework
+LetsTalk is an Android application that implements a simple chat utilizing the OCSF framework.

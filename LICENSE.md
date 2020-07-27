@@ -1,4 +1,4 @@
-MIT License
+# The MIT License for LetsTalk
 
 Copyright (c) 2020 Xiaoxi Jia
 
