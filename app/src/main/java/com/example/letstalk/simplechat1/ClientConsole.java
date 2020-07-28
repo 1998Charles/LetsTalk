@@ -10,6 +10,9 @@ import com.example.letstalk.simplechat1.common.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+import android.widget.TextView;
+
+
 /**
  * This class constructs the UI for a chat client.  It implements the
  * chat interface in order to activate the display() method.
@@ -148,6 +151,11 @@ public class ClientConsole implements ChatIF
   public void display(String message)
   {
     System.out.println("> " + message);
+  }
+
+  public void displayText(TextView text, String message)
+  {
+    text.setText(text.getText() + "\n> " + message);
   }
 
 

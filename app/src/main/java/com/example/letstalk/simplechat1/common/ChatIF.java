@@ -12,6 +12,14 @@ package com.example.letstalk.simplechat1.common;
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
+
+import android.widget.TextView;
+
+/**
+ * @author Xiaoxi Jia
+ * @version July 2020
+ */
+
 public interface ChatIF 
 {
   /**
@@ -19,4 +27,7 @@ public interface ChatIF
    * a UI.
    */
   public abstract void display(String message);
+
+  public void displayText(TextView text, String message);
+
 }

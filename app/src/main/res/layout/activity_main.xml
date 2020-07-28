@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/star"
     android:scrollbarSize="6dp"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".ui.login.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:scrollHorizontally="false"
                 android:selectAllOnFocus="false"
                 android:singleLine="false"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
+                android:text="Test: "
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:typeface="sans" />

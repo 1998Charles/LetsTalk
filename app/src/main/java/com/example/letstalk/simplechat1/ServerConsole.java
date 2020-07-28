@@ -1,5 +1,7 @@
 package com.example.letstalk.simplechat1;
 
+import android.widget.TextView;
+
 import java.io.*;
 import com.example.letstalk.simplechat1.common.*;
 import java.net.InetAddress;
@@ -24,6 +26,11 @@ public class ServerConsole implements ChatIF {
 	public void display(String message) {
     	System.out.println(">>> " + message);
   	}
+
+	public void displayText(TextView text, String message)
+	{
+		text.setText(text.getText() + "\n> " + message);
+	}
 
   	public void accept() {
   		try {
