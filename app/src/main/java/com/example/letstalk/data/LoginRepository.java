@@ -7,6 +7,11 @@ import java.security.PrivateKey;
 import java.util.HashMap;
 
 /**
+ * @author Xiaoxi Jia
+ * @version July 2020
+ */
+
+/**
  * Class that requests authentication and user information from the remote data source and
  * maintains an in-memory cache of login status and user credentials information.
  */

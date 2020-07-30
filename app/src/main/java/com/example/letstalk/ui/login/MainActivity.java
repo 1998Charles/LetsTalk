@@ -24,6 +24,10 @@ import com.example.letstalk.simplechat1.ClientConsole;
  * @version July 2020
  */
 
+/**
+ * Class that extends the AppCompatActivity class to handle the chatting UI
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     //LoginRepository loginRepository;
@@ -35,12 +39,16 @@ public class MainActivity extends AppCompatActivity {
     Button hideButton; // Hide the keyboard
     Button sendButton; // Send and update the message
 
-    ClientConsole chat;
+    ClientConsole chat; // Create a ClientConsole
 
-    final public static int DEFAULT_PORT = 5555;
+    final public static int DEFAULT_PORT = 5555; // The default port number
 
 
     // private MyLog.MLog myLog = new MyLog.MLog();
+
+    /**
+     * The onCreate method
+     */
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -50,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         // LoginRepository loginRepository= new LoginActivity().getLoginRepository();
 
+        // Get all date from the login activity
         Intent intent = getIntent();
         String loginID = intent.getStringExtra("loginID");
         String hostName = intent.getStringExtra("hostName");
@@ -65,20 +74,19 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-
         try
         {
             //ClientConsole.main(new String[]{loginID, hostName, portNumber});
 
             chat = new ClientConsole(loginID, hostName, Integer.parseInt(portNumber));
 
-            //chat.accept();
+            Toast.makeText(getApplicationContext(), "Welcome to LetsTalk! \uD83E\uDD73 ", Toast.LENGTH_LONG).show();
 
-            //System.out.println("Victory(System)" + "\r\n");
+/*          chat.accept();
+            System.out.println("Victory(System)" + "\r\n");
 
-/*
-           Log.i(LOG_TAG, "Victory");
 
+            Log.i(LOG_TAG, "Victory");
             MyLog.MLog.getLog();
 
             FileWriter output = new FileWriter("ChatLog.txt");
@@ -94,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             String message;
 
 
-                 while (true) {
+            while (true) {
                 try
                 {
                     message = fromConsole.readLine();
@@ -121,10 +129,16 @@ public class MainActivity extends AppCompatActivity {
             }
             out.append("THE END.");
 
-            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
-            Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
+            // Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+            // Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
+
+            Toast.makeText(getApplicationContext(),  "Error: Can't setup connection! Terminating client. \uD83D\uDE22 ", Toast.LENGTH_LONG).show();
+
+            finish();
         }
 
+
+        // Click HIDE button to hide the keyboard
 
         hideButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Click SEND button to send message to server or to handle Commands
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,11 +165,21 @@ public class MainActivity extends AppCompatActivity {
 
                         if (message.equals("#quit")) {
                             windowEditText.setText("");
-                            chat.getChatClient().quit();
-                            finish();
+                            try {
+                                chat.getChatClient().closeConnection();
+                            }
+                            catch (Throwable t) {
+                                Toast.makeText(getApplicationContext(), "Bye-bye! \uD83D\uDC4B ", Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                            finally {
+                                Toast.makeText(getApplicationContext(), "Bye-bye! \uD83D\uDC4B ", Toast.LENGTH_LONG).show();
+                                finish();
+                            }
                         } else if (message.equals("#logoff")) {
                             chat.getChatClient().closeConnection();
                             windowEditText.setText("");
+                            display("You have been disconnected.");
                         } else if (message.split(" ")[0].equals("#sethost")) {
                             if (chat.getChatClient().isConnected()) {
                                 display("Client logged in, logoff to set the host.");
@@ -182,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
                                 chat.getChatClient().openConnection();
                                 windowEditText.setText("");
                                 //chat.getChatClient().login();
+                                display("Welcome back!");
                             }
                         } else if (message.equals("#gethost")) {
                             if (chat.getChatClient().isConnected()) {
@@ -212,9 +239,13 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
 
+/*
                     String string;
                     string = chat.getChatClient().getMessage().toString();
                     textView.setText(string);
+*/
+                    textView.performClick();
+
                 }
                 catch (Throwable e)
                 {
@@ -233,6 +264,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        // Click the textView window to get any message updated
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -312,9 +346,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method that displays the Command message
+     */
+
     public void display(String message)
     {
-        windowEditText.setText(message);
+        windowEditText.setText("\uD83D\uDDA5️: " + message);
     }
 
 }

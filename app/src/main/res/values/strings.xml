@@ -14,9 +14,9 @@
     <string name="port_number">"Port Number"</string>
     <string name="sign_in">"LOGIN"</string>
     <string name="tips">
-        "⚠️IMPORTANT⚠️:✅ Each time, one must tap the Message window(the top first) to fetch the message from the Server or sometimes need to update after 🚀SEND.✅ The Command feedback will be displayed on the Edit window; One ought to Clear the feedback before sending anything else.✅ Click 🛰HIDE to hide the keyboard⌨️.✅ Click 🚀SEND to send the message📝.️
+        "⚠️IMPORTANT⚠️:✅ Each time, one must tap the Message window(the top first) to fetch the message from the Server or sometimes need to update after 🚀SEND.✅ The Command feedback will be displayed on the Edit window; One ought to Clear the feedback before sending anything else.✅ Click 🛰HIDE to hide the keyboard⌨️.✅ Click 🚀SEND to send the Command or the message📝.️
         💻COMMAND💻:
-        1⃣️ #quit Causes the client to terminate gracefully. Make sure the connection to the server is terminated before exiting the program.
+        1⃣️ #quit Causes the client to terminate gracefully. The connection to the server will be terminated before exiting the program.
         2⃣️ #logoff Causes the client to disconnect from the server, but not quit.
         3⃣️ #sethost [host] Calls the setHost method in the client, where '[host]' is your new host. Only allowed if the client is logged off; displays an error message otherwise.
         4⃣️ #setport [port] Calls the setPort method in the client, with the same constraints as #sethost. '[port]' is your new port.

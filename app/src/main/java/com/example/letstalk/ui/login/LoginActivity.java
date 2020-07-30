@@ -1,5 +1,6 @@
 package com.example.letstalk.ui.login;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -157,21 +158,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
 
-
-
+/*
                 try
                 {
                 /*
                     ClientConsole chat = new ClientConsole(loginIdEditText.getText().toString(), usernameEditText.getText().toString(), Integer.parseInt(passwordEditText.getText().toString()));
                     chat.accept();
                     ClientConsole.main(new String[]{loginIdEditText.getText().toString(), usernameEditText.getText().toString(), passwordEditText.getText().toString()});
-                */
+                * /
 
                     loginRepository = new LoginRepository(loginIdEditText.getText().toString(), usernameEditText.getText().toString(), passwordEditText.getText().toString());
 
@@ -185,9 +186,9 @@ public class LoginActivity extends AppCompatActivity {
                     setContentView(R.layout.test2);
                     TextView textView=(TextView)findViewById(R.id.windowText);
                     textView.setMovementMethod(ScrollingMovementMethod.getInstance());
-                    */
+                    * /
 
-                    Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！\uD83E\uDD73 ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Welcome to LetsTalk！🥳 ", Toast.LENGTH_LONG).show();
 
 
 
@@ -205,11 +206,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
                     Toast.makeText(getApplicationContext(), out.toString(), Toast.LENGTH_LONG).show();
- //                 Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
+                 // Toast.makeText(getApplicationContext(), "Error, please try again later.", Toast.LENGTH_LONG).show();
                 }
+*/
 
                 try
                 {
+                    Toast.makeText(getApplicationContext(), "Thank you. \uD83E\uDD1D ", 900).show();
 
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra("loginID", loginIdEditText.getText().toString());
@@ -218,7 +221,6 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
 
                     LoginActivity.this.finish();
-
                 }
 
                 catch (Throwable t)

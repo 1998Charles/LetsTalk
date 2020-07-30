@@ -11,7 +11,7 @@ import android.widget.ScrollView;
  */
 
 /**
- * Override the ScrollView class to allow Intercept touch for multiple Scrollview
+ * Class that extends the ScrollView class to allow Intercept touch for multiple Scrollview
  */
 
 public class MyScrollView extends ScrollView {
@@ -24,6 +24,11 @@ public class MyScrollView extends ScrollView {
     public MyScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
+    /**
+     * Method overrides the onInterceptTouchEvent method
+     */
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         getParent().requestDisallowInterceptTouchEvent(true);

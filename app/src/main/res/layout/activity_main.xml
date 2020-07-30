@@ -92,7 +92,7 @@
                 android:background="@drawable/hide_send"
                 android:fontFamily="@font/helvetica_neue"
                 android:gravity="center"
-                android:soundEffectsEnabled="true"
+                android:soundEffectsEnabled="false"
                 android:text="🚀️ SEND "
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
