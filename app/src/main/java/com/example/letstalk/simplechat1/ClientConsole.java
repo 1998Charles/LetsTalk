@@ -23,6 +23,12 @@ import android.widget.TextView;
  * @author Dr Robert Lagani&egrave;re
  * @version July 2000
  */
+
+/**
+ * @author Xiaoxi Jia
+ * @version July 2020
+ */
+
 public class ClientConsole implements ChatIF
 {
   //Class variables *************************************************
@@ -69,6 +75,7 @@ public class ClientConsole implements ChatIF
    * This method waits for input from the console.  Once it is
    * received, it sends it to the client's message handler.
    */
+/*
   public void accept()
   {
     try
@@ -80,6 +87,7 @@ public class ClientConsole implements ChatIF
       while (true)
       {
         message = fromConsole.readLine();
+
 
         if (message.equals("#quit")) {
           client.quit();
@@ -139,8 +147,10 @@ public class ClientConsole implements ChatIF
     {
       display
         ("Unexpected error while reading from client console!");
+      ex.printStackTrace();
     }
   }
+*/
 
   /**
    * This method overrides the method in the ChatIF interface.  It
@@ -153,64 +163,71 @@ public class ClientConsole implements ChatIF
     System.out.println("> " + message);
   }
 
-  public void displayText(TextView text, String message)
-  {
-    text.setText(text.getText() + "\n> " + message);
-  }
+//  public void displayText(TextView text, String message)
+//  {
+//    text.setText(text.getText() + "\n> " + message);
+//  }
 
 
   //Class methods ***************************************************
+
+  public ChatClient getChatClient()
+  {
+    return client;
+  }
 
   /**
    * This method is responsible for the creation of the Client UI.
    *
    * @param args[0] The host to connect to.
    */
-  public static void main(String[] args)
-  {
-    InetAddress ip;
-    String loginid = "";
-    String host = "";
-    int port = DEFAULT_PORT;  //The port number
+//  public static void main(String[] args)
+//  {
+//    InetAddress ip;
+//    String loginid = "";
+//    String host = "";
+//    int port = DEFAULT_PORT;  //The port number
+//
+//    try {
+//      ip = InetAddress.getLocalHost();
+//      host = ip.getHostName();
+//    } catch (UnknownHostException e) {
+//      e.printStackTrace();
+//    }
+//
+//    if (args.length == 1) {
+//      loginid = args[0];
+//    }
+//      else if (args.length == 2) {
+//      loginid = args[0];
+//      host = args[1];
+//      }
+//      else if(args.length == 3) {
+//      loginid = args[0];
+//      host = args[1];
+//      try {
+//        port = Integer.parseInt(args[2]);
+//      } catch (NumberFormatException e) {
+//        System.out.println("Invalid port number");
+//        return;
+//      }
+//    } else {
+//      System.out.println("invalid login");
+//      return;
+//    }
+//
+//    // try {
+//    //   host = args[0];
+//    //   port = Integer.parseInt(args[1]); //Get port from command line
+//    // } catch(Throwable t) {
+//    //   host = "localhost";
+//    //   port = DEFAULT_PORT; //Set port to 5555
+//    // }
+//
+//    ClientConsole chat = new ClientConsole(loginid, host, port);
+//    chat.accept();  //Wait for console data
+//  }
 
-    try {
-      ip = InetAddress.getLocalHost();
-      host = ip.getHostName();
-    } catch (UnknownHostException e) {
-      e.printStackTrace();
-    }
 
-    if (args.length == 1) {
-      loginid = args[0];
-    }
-      else if (args.length == 2) {
-      loginid = args[0];
-      host = args[1];
-      }
-      else if(args.length == 3) {
-      loginid = args[0];
-      host = args[1];
-      try {
-        port = Integer.parseInt(args[2]);
-      } catch (NumberFormatException e) {
-        System.out.println("Invalid port number");
-        return;
-      }
-    } else {
-      System.out.println("invalid login");
-      return;
-    }
-
-    // try {
-    //   host = args[0];
-    //   port = Integer.parseInt(args[1]); //Get port from command line
-    // } catch(Throwable t) {
-    //   host = "localhost";
-    //   port = DEFAULT_PORT; //Set port to 5555
-    // }
-
-    ClientConsole chat = new ClientConsole(loginid, host, port);
-    chat.accept();  //Wait for console data
-  }
 }
 //End of ConsoleChat class

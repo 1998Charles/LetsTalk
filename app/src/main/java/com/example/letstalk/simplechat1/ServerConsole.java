@@ -27,10 +27,6 @@ public class ServerConsole implements ChatIF {
     	System.out.println(">>> " + message);
   	}
 
-	public void displayText(TextView text, String message)
-	{
-		text.setText(text.getText() + "\n> " + message);
-	}
 
   	public void accept() {
   		try {

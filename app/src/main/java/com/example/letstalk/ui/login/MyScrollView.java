@@ -4,7 +4,15 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
-import com.example.letstalk.*;
+
+/**
+ * @author Xiaoxi Jia
+ * @version July 2020
+ */
+
+/**
+ * Override the ScrollView class to allow Intercept touch for multiple Scrollview
+ */
 
 public class MyScrollView extends ScrollView {
     public MyScrollView(Context context) {

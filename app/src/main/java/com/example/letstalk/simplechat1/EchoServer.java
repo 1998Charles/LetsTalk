@@ -82,7 +82,7 @@ public class EchoServer extends AbstractServer
   }
 
   public void handleMessageFromServer(Object msg) {
-    String prefix = "SERVER MSG>";
+    String prefix = "SERVER MSG> ";
     serverUI.display(prefix + msg);
     this.sendToAllClients(prefix + msg);
   }

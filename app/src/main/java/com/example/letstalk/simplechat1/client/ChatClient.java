@@ -17,6 +17,12 @@ import java.io.*;
  * @author Fran&ccedil;ois B&eacute;langer
  * @version July 2000
  */
+
+/**
+ * @author Xiaoxi Jia
+ * @version July 2020
+ */
+
 public class ChatClient extends AbstractClient
 {
   //Instance variables **********************************************
@@ -28,6 +34,7 @@ public class ChatClient extends AbstractClient
   ChatIF clientUI; 
   String id;
 
+  StringBuilder message = new StringBuilder("");
   
   //Constructors ****************************************************
   
@@ -59,7 +66,17 @@ public class ChatClient extends AbstractClient
    */
   public void handleMessageFromServer(Object msg) 
   {
-    clientUI.display(msg.toString());
+    setMessage((String) msg);
+    // clientUI.display(msg.toString());
+  }
+
+  public void setMessage(String str){
+    message.append(str);
+    message.append("\r\n");
+  }
+
+  public StringBuilder getMessage(){
+    return message;
   }
 
   public void login() {

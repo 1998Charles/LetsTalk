@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">#FD5E0F</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
 <!--    Apple Blue #A5CDFE-->
     </style>
 

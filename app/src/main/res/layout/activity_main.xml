@@ -44,10 +44,14 @@
                 android:scrollHorizontally="false"
                 android:selectAllOnFocus="false"
                 android:singleLine="false"
-                android:text="Test: "
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:typeface="sans" />
+                android:typeface="sans"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"/>
+
         </com.example.letstalk.ui.login.MyScrollView>
 
         <LinearLayout
@@ -72,7 +76,7 @@
                 android:fontFamily="@font/helvetica_neue"
                 android:gravity="center"
                 android:soundEffectsEnabled="true"
-                android:text="⌨️ HIDE ️"
+                android:text="🛰️ HIDE ️"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -89,7 +93,7 @@
                 android:fontFamily="@font/helvetica_neue"
                 android:gravity="center"
                 android:soundEffectsEnabled="true"
-                android:text="✉️ SEND "
+                android:text="🚀️ SEND "
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -121,10 +125,13 @@
                 android:scrollHorizontally="false"
                 android:selectAllOnFocus="false"
                 android:singleLine="false"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
                 android:textColor="#000000"
                 android:textSize="15sp"
-                android:typeface="normal" />
+                android:typeface="normal"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"/>
 
         </com.example.letstalk.ui.login.MyScrollView>
 
@@ -148,10 +155,14 @@
             android:scrollHorizontally="false"
             android:selectAllOnFocus="false"
             android:singleLine="false"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor iusto natus perspiciatis quaerat voluptates! Alias beatae consequuntur culpa iure laborum nihil quia repellat sint velit voluptatibus. Aperiam at commodi exercitationem facilis iure laborum magni maiores nemo qui voluptas! Asperiores consequuntur, eum magnam nam nesciunt officia provident quasi? Debitis, eligendi, iste."
+            android:text="@string/tips"
             android:textColor="#000000"
             android:textSize="12sp"
             android:typeface="normal"
-            android:lineSpacingMultiplier="0.93"/>
+            android:lineSpacingMultiplier="0.81"
+            android:paddingLeft="12dp"
+            android:paddingTop="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="12dp"/>
     </LinearLayout>
 </com.example.letstalk.ui.login.MyScrollView>
