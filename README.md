@@ -15,7 +15,7 @@ LetsTalk is an Android application that implements a simple chat utilizing the O
 * Get an error message if failed to login. 
 
 #### Chat Page
-* Each time, one must tap the Message window(the top first) to fetch the message from the Server or sometimes need to update after 🚀SEND.
+* Each time, one must tap the Message window(the first one from the top) to fetch the message from the Server or sometimes need to update after 🚀SEND.
 * The Command feedback will be displayed on the Edit window; One ought to Clear the feedback before sending anything else.
 * Click 🛰HIDE to hide the keyboard.
 * Click 🚀SEND to send the Command or the message.️
