@@ -8,7 +8,7 @@ LetsTalk is an Android application that implements a simple chat utilizing the O
 * Click ⌨️ to hide the keyboard.
 * Enter the login ID at the Login ID line.
 * Enter the hostname at the Host Name line.
-* Enter the port number at the Port Number column.
+* Enter the port number at the Port Number line.
 * Click LOGIN to initiate the chat and build the connection with the server.
 * Get a thanking message after the login.
 * Get a welcome message after going to the chat page.
