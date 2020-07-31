@@ -57,6 +57,8 @@ LetsTalk is an Android application that implements a simple chat utilizing the O
 [Xiaoxi Jia - LetsTalk [PROJECT DEMONSTRATION VIDEO]](https://www.youtube.com/watch?v=QfKm7iDxsDs)
 #### Reference the Test Cases from the SimpleChat
 [Test cases Phase 1 & 2](https://github.com/1998Charles/LetsTalk/tree/master/TestCasesCouldReference)
+## License
+LetsTalk is licensed under the MIT license. See [LetsTalk MIT License](https://github.com/1998Charles/LetsTalk/blob/master/LICENSE.md)
 ## Credits
 * [Timothy C. Lethbridge](https://github.com/TimLethbridge)
 * [Android Studio](https://developer.android.com/studio/projects/templates)
